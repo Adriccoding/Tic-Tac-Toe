@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
             {R.id.button20, R.id.button21, R.id.button22}};
     Button tiles[][] = new Button[3][3];
     private TextView tracker;
+    private TextView test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button buttonRestart = (Button) findViewById(R.id.buttonRestart);
         tracker = (TextView) findViewById(R.id.Tracker);
+        test = (TextView) findViewById(R.id.test);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 b.setEnabled(false);
                 tracker.setText("X");
             }
+            checkForWin();
         }
     };
 
@@ -62,6 +65,34 @@ public class MainActivity extends AppCompatActivity {
             }
             isX = true;
             tracker.setText("X");
+            test.setText("No Winner");
         }
-    };
+    }; // can make this its own function if need to reset game in other ways
+
+    private void checkForWin(){
+        for(int i=0; i<3; i++){
+            if(tiles[i][0].getText().toString().equals(tiles[i][1].getText().toString())
+                    && (tiles[i][0].getText().toString().equals(tiles[i][2].getText().toString()))
+                    && !tiles[i][0].getText().toString().equals("")){
+                test.setText("Winner!");
+            }
+        } // check horizontal victory
+        for(int i=0; i<3; i++){
+            if(tiles[0][i].getText().toString().equals(tiles[1][i].getText().toString())
+                    && (tiles[0][i].getText().toString().equals(tiles[2][i].getText().toString()))
+                    && !tiles[0][i].getText().toString().equals("")){
+                test.setText("Winner!");
+            }
+        } // check vertical victory
+        if(tiles[0][0].getText().toString().equals(tiles[1][1].getText().toString())            /////////////////////////////////////
+                && (tiles[0][0].getText().toString().equals(tiles[2][2].getText().toString()))  //    Check top left to bottom right win
+                && !tiles[0][0].getText().toString().equals("")){                               //
+            test.setText("Winner!");                                                            /////////////////////////////////////
+        }
+        if(tiles[0][2].getText().toString().equals(tiles[1][1].getText().toString())            /////////////////////////////////////
+                && (tiles[0][2].getText().toString().equals(tiles[2][0].getText().toString()))  //    Check top right to bottom left win
+                && !tiles[0][2].getText().toString().equals("")){                               //
+            test.setText("Winner!");                                                            /////////////////////////////////////
+        }
+    }
 }
