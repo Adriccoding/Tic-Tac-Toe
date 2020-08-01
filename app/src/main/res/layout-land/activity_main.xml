@@ -6,15 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button00"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+    <TextView
+        android:id="@+id/owinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Player O Wins"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="@+id/xwinText"
+        app:layout_constraintTop_toBottomOf="@+id/xwinText" />
+
+    <TextView
+        android:id="@+id/xwinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:focusable="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Player X Wins:"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button02"
+        app:layout_constraintTop_toBottomOf="@+id/Turn" />
+
+    <TextView
+        android:id="@+id/xwinCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="0"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/owinText"
+        app:layout_constraintStart_toEndOf="@+id/owinText" />
+
+    <TextView
+        android:id="@+id/owinCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="0"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/xwinText"
+        app:layout_constraintStart_toEndOf="@+id/xwinText" />
+
+    <Button
+        android:id="@+id/button00"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +67,10 @@
 
     <Button
         android:id="@+id/button01"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button00"
@@ -35,12 +78,10 @@
 
     <Button
         android:id="@+id/button02"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button01"
@@ -48,11 +89,9 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="@+id/button00"
@@ -60,12 +99,10 @@
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button10"
@@ -73,24 +110,20 @@
 
     <Button
         android:id="@+id/button12"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button11"
-        app:layout_constraintStart_toEndOf="@+id/button11" />
+        app:layout_constraintStart_toEndOf="@+id/button11"
+        android:freezesText="true" />
 
     <Button
         android:id="@+id/button20"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="@+id/button10"
@@ -98,12 +131,10 @@
 
     <Button
         android:id="@+id/button21"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button20"
@@ -111,12 +142,10 @@
 
     <Button
         android:id="@+id/button22"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:freezesText="true"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button21"
@@ -124,82 +153,45 @@
 
     <Button
         android:id="@+id/buttonRestart"
-        android:layout_width="388dp"
-        android:layout_height="72dp"
+        android:layout_width="238dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:text="Restart Game"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/button22" />
 
     <TextView
         android:id="@+id/Turn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Turn:"
         android:textSize="36sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Tracker"
-        app:layout_constraintEnd_toStartOf="@+id/Tracker" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toEndOf="@+id/button02"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Tracker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="X"
+        android:text="   "
         android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/OwinCounter" />
-
-    <TextView
-        android:id="@+id/XwinText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Player X Wins:"
-        android:textSize="36sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/XwinCounter"
-        app:layout_constraintEnd_toStartOf="@+id/XwinCounter" />
-
-    <TextView
-        android:id="@+id/XwinCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="0"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button22" />
-
-    <TextView
-        android:id="@+id/OwinCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="0"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/XwinCounter" />
-
-    <TextView
-        android:id="@+id/OwinText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Player O Wins"
-        android:textSize="36sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/OwinCounter"
-        app:layout_constraintEnd_toStartOf="@+id/OwinCounter" />
+        app:layout_constraintStart_toEndOf="@+id/Turn"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
