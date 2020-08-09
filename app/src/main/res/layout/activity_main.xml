@@ -124,13 +124,25 @@
 
     <Button
         android:id="@+id/buttonRestart"
-        android:layout_width="388dp"
-        android:layout_height="72dp"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:text="Restart Game"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonResetScore"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Reset Score"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonRestart"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -162,7 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Player X Wins:"
+        android:text="Player 1 Wins:"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/XwinCounter"
         app:layout_constraintEnd_toStartOf="@+id/XwinCounter" />
@@ -197,9 +209,20 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Player O Wins:"
+        android:text="Player 2 Wins:"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/OwinCounter"
         app:layout_constraintEnd_toStartOf="@+id/OwinCounter" />
+
+    <Button
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Main Menu"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRestart"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
