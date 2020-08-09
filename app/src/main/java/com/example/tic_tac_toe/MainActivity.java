@@ -8,17 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    //saved state key-values
-    private static final String STATE_TURN_TRACKER = "turnTracker";
-    private static final String STATE_DRAW = "isX";
-    private static final String STATE_X_WINS = "playerXWins";
-    private static final String STATE_O_WINS = "playerOWins";
-
-
     // Global variables
+    boolean hasWon = false;
     int playerXWins = 0;
     int playerOWins = 0;
     boolean isX = true;
@@ -95,10 +90,12 @@ public class MainActivity extends AppCompatActivity {
                     && !tiles[i][0].getText().toString().equals("")) {
                 if (tiles[i][0].getText().toString().equals("X")) {
                     playerXWins++;
+                    hasWon = true;
                     XTracker.setText(String.format("%d", playerXWins));
                 }
                 if (tiles[i][0].getText().toString().equals("O")) {
                     playerOWins++;
+                    hasWon = true;
                     OTracker.setText(String.format("%d", playerOWins));
                 }
             }
@@ -109,60 +106,48 @@ public class MainActivity extends AppCompatActivity {
                     && !tiles[0][i].getText().toString().equals("")) {
                 if (tiles[0][i].getText().toString().equals("X")) {
                     playerXWins++;
+                    hasWon = true;
                     XTracker.setText(String.format("%d", playerXWins));
                 }
                 if (tiles[0][i].getText().toString().equals("O")) {
                     playerOWins++;
+                    hasWon = true;
                     OTracker.setText(String.format("%d", playerOWins));
                 }
 
             }
         } // check vertical victory
-        if (tiles[0][0].getText().toString().equals(tiles[1][1].getText().toString())            /////////////////////////////////////
-                && (tiles[0][0].getText().toString().equals(tiles[2][2].getText().toString()))  //    Check top left to bottom right win
+        if (tiles[0][0].getText().toString().equals(tiles[1][1].getText().toString())
+                && (tiles[0][0].getText().toString().equals(tiles[2][2].getText().toString()))  // Check top left to bottom right win
                 && !tiles[0][0].getText().toString().equals("")) {                               //
             if (tiles[0][0].getText().toString().equals("X")) {                                   /////////////////////////////////////
                 playerXWins++;
+                hasWon = true;
                 XTracker.setText(String.format("%d", playerXWins));
             }
             if (tiles[0][0].getText().toString().equals("O")) {
                 playerOWins++;
+                hasWon = true;
                 OTracker.setText(String.format("%d", playerOWins));
             }
         }
-        if (tiles[0][2].getText().toString().equals(tiles[1][1].getText().toString())            /////////////////////////////////////
-                && (tiles[0][2].getText().toString().equals(tiles[2][0].getText().toString()))  //    Check top right to bottom left win
+        if (tiles[0][2].getText().toString().equals(tiles[1][1].getText().toString())
+                && (tiles[0][2].getText().toString().equals(tiles[2][0].getText().toString()))  // Check top right to bottom left win
                 && !tiles[0][2].getText().toString().equals("")) {                               //
             if (tiles[0][2].getText().toString().equals("X")) {                                   //////////////////////////////////////
                 playerXWins++;
+                hasWon = true;
                 XTracker.setText(String.format("%d", playerXWins));
             }
             if (tiles[0][2].getText().toString().equals("O")) {
                 playerOWins++;
+                hasWon = true;
                 OTracker.setText(String.format("%d", playerOWins));
             }
         }
+        if(hasWon){
+            Toast.makeText(MainActivity.this, "winner!", Toast.LENGTH_LONG).show();
+        }
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putString(STATE_TURN_TRACKER, turnTracker);
-        outState.putBoolean(STATE_DRAW, isX);
-        outState.putInt(STATE_X_WINS, playerXWins);
-        outState.putInt(STATE_O_WINS, playerOWins);
-        super.onSaveInstanceState(outState);
-    }
-
-    @SuppressLint("DefaultLocale")
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        turnTracker = savedInstanceState.getString(STATE_TURN_TRACKER);
-        isX = savedInstanceState.getBoolean(STATE_DRAW);
-        playerXWins = savedInstanceState.getInt(STATE_X_WINS);
-        playerOWins = savedInstanceState.getInt(STATE_O_WINS);
-        tracker.setText(turnTracker);
-        //OTracker.setText(String.format("%d", playerOWins));
-        //XTracker.setText(String.format("%d", playerXWins));
-    }
 }
