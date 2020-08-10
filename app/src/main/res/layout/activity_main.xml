@@ -151,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Turn:"
+        android:text="Player 1 is:"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/Tracker"
         app:layout_constraintEnd_toStartOf="@+id/Tracker" />
@@ -223,6 +223,17 @@
         android:layout_marginBottom="16dp"
         android:text="Main Menu"
         app:layout_constraintBottom_toTopOf="@+id/buttonRestart"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSwap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Swap"
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
