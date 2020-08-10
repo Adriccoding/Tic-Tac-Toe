@@ -151,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Player 1 is:"
+        android:text="is:"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/Tracker"
         app:layout_constraintEnd_toStartOf="@+id/Tracker" />
@@ -174,7 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Player 1 Wins:"
+        android:text="Wins:"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/XwinCounter"
         app:layout_constraintEnd_toStartOf="@+id/XwinCounter" />
@@ -209,7 +209,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Player 2 Wins:"
+        android:text="Wins:"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/OwinCounter"
         app:layout_constraintEnd_toStartOf="@+id/OwinCounter" />
@@ -235,5 +235,38 @@
         android:text="Swap"
         app:layout_constraintBottom_toTopOf="@+id/btnMenu"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/player1Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="filler1"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/XwinText"
+        app:layout_constraintEnd_toStartOf="@+id/XwinText" />
+
+    <TextView
+        android:id="@+id/player2Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="filler2"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/OwinText"
+        app:layout_constraintEnd_toStartOf="@+id/OwinText" />
+
+    <TextView
+        android:id="@+id/whosX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="filler 3"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Turn"
+        app:layout_constraintEnd_toStartOf="@+id/Turn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

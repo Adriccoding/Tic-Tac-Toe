@@ -10,10 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     // Global variables
-    String TAG = "DEBUG";
     boolean hasWon = false;
     boolean player1X = true;
     int player1Wins = 0;
@@ -27,20 +28,33 @@ public class MainActivity extends AppCompatActivity {
     private TextView tracker;
     private TextView XTracker;
     private TextView OTracker;
+    private TextView whosX;
+    String name1;
+    String name2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        name1 = getIntent().getStringExtra("name1_key");
+        name2 = getIntent().getStringExtra("name2_key");
+
+        TextView player1Name = (TextView) findViewById(R.id.player1Name);
+        TextView player2Name = (TextView) findViewById(R.id.player2Name);
         Button buttonMenu = (Button) findViewById(R.id.btnMenu);
         Button buttonRestart = (Button) findViewById(R.id.buttonRestart);
         Button buttonResetScore = (Button) findViewById(R.id.buttonResetScore);
         Button buttonSwap = (Button) findViewById(R.id.btnSwap);
+        whosX = (TextView) findViewById(R.id.whosX);
         tracker = (TextView) findViewById(R.id.Tracker);
         XTracker = (TextView) findViewById(R.id.XwinCounter);
         OTracker = (TextView) findViewById(R.id.OwinCounter);
+
         tracker.setText(turnTracker);
+        player1Name.setText(name1);
+        player2Name.setText(name2);
+        whosX.setText(name1);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -102,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             if(player1X){
                 player1X = false;
-                tracker.setText("O");
+                whosX.setText(name2);
             } else {
                 player1X = true;
-                tracker.setText("X");
+                whosX.setText(name1);
             }
         }
     };

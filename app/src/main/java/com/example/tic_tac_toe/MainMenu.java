@@ -20,13 +20,13 @@ public class MainMenu extends AppCompatActivity {
         btn2player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                open2Player();
+                openNames();
             }
         });
     }
 
-    public void open2Player(){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openNames(){
+        Intent intent = new Intent(this, EnterNames.class);
         startActivity(intent);
     }
 }
