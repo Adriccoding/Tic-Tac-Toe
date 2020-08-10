@@ -11,10 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity">
-        <activity android:name=".EnterNames"></activity>
+        <activity android:name=".ComputerNormal"></activity>
+        <activity android:name=".DifficultySelector" />
+        <activity android:name=".EnterNames" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainMenu"
             android:screenOrientation="portrait">

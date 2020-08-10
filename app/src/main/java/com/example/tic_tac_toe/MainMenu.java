@@ -23,10 +23,22 @@ public class MainMenu extends AppCompatActivity {
                 openNames();
             }
         });
+
+        btn1player.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDifficulty();
+            }
+        });
     }
 
     public void openNames(){
         Intent intent = new Intent(this, EnterNames.class);
+        startActivity(intent);
+    }
+
+    public void openDifficulty(){
+        Intent intent = new Intent(this, DifficultySelector.class);
         startActivity(intent);
     }
 }

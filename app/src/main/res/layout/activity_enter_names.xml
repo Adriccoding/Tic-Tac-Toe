@@ -50,8 +50,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="textCapSentences"
+        android:hint="Name"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayer1"
         app:layout_constraintStart_toEndOf="@+id/textViewPlayer1" />
 
@@ -62,8 +62,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="textCapSentences"
+        android:hint="Name"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayer2"
         app:layout_constraintStart_toEndOf="@+id/textViewPlayer2" />
 
