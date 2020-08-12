@@ -14,7 +14,7 @@ import org.w3c.dom.Text;
 
 import java.util.Random;
 
-public class ComputerHard extends AppCompatActivity {
+public class ComputerImpossible extends AppCompatActivity {
 
     // Global variables
     String TAG = "debug";

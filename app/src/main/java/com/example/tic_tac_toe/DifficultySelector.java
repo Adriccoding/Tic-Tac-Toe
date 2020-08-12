@@ -34,6 +34,12 @@ public class DifficultySelector extends AppCompatActivity {
                 launchHard();
             }
         });
+        btnImpossible.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchImpossible();
+            }
+        });
     }
 
     private void launchNormal(){
@@ -44,6 +50,12 @@ public class DifficultySelector extends AppCompatActivity {
     }
 
     private void launchHard(){
+        Intent intent = new Intent(this, ComputerHard.class);
+        String playerName = name.getText().toString();
+        intent.putExtra("name_key", playerName);
+        startActivity(intent);
+    }
+    private void launchImpossible(){
         Intent intent = new Intent(this, ComputerHard.class);
         String playerName = name.getText().toString();
         intent.putExtra("name_key", playerName);
