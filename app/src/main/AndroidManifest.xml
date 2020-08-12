@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity">
-        <activity android:name=".ComputerNormal"></activity>
+        <activity android:name=".ComputerHard"></activity>
+        <activity android:name=".ComputerNormal" />
         <activity android:name=".DifficultySelector" />
         <activity android:name=".EnterNames" />
         <activity
